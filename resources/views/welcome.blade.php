@@ -10,8 +10,7 @@
                 height: 100%;
             }
 
-            body {
-                margin: 0;
+               margin: 0;
                 padding: 0;
                 width: 100%;
                 display: table;
@@ -38,7 +37,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title">Laravel 5yyygg</div>
             </div>
         </div>
     </body>
