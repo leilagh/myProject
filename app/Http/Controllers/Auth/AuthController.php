@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Models\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Morilog\Jalali\jDate;
 
 class AuthController extends Controller
 {
@@ -22,6 +23,8 @@ class AuthController extends Controller
     */
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+
+    protected $redirectPath = '/';
 
     /**
      * Create a new authentication controller instance.
@@ -56,10 +59,18 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+        $b_month = (strlen($data['b_month'])<2)?"0".$data['b_month']: $data['b_month'];
+        $b_day = (strlen($data['b_day'])<2)?"0".$data['b_day']:$data['b_day'];
+        $jdate = $data['b_year']."-".$b_month."-".$b_day." 00:00:00";
+        $birthday = \Morilog\Jalali\jDatetime::createDatetimeFromFormat('Y-m-d H:i:s', $jdate);
+        $data['birthday'] = $birthday;
+        $newsletter = (@$data['newsletter'])?$data['newsletter']:0;
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'newsletter' => $data['newsletter'],
+            'birthday' => $data['birthday'],
         ]);
     }
 }

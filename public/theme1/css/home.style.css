@@ -1,0 +1,189 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By Ghasemi
+ */
+
+section#home-sec-1{
+	background: url(../images/ch01_001.jpg) center center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height:auto;
+    color:#fff;
+    min-height: 450px;
+}
+.home-logo-1{
+	background: url(../images/ch01_002.png) center center no-repeat;
+    	padding-top: 45px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 109px;
+    font-size:0;
+}
+#home-sec-1 .home-sec-text{
+    font-size: 2.2em;
+    font-weight: 500;
+    margin-bottom:5px;
+}
+.home-guest-btn{
+    border: 1px solid #fff;
+    color:#fff;
+    margin: 0 1em;
+    background: none !important;
+}
+
+section.home-section{
+	text-align: center;
+    color:#31383e;
+    padding:10px 0;
+}
+.home-sec-title{
+    font-size: 25px;
+    font-weight: bold;
+    font-style: normal;
+}
+.home-sec-text {
+	margin-bottom:1em; 
+    font-size: 18px;
+    font-style: normal;
+}
+.home-sec-text a{
+    /*font-size: 13pt;
+    font-weight: 600;*/
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.cfshp-list-title1{
+	font-size: 10pt;
+	font-weight: 500;
+}
+.cfshp-list-title1 a{
+	color:#31383e;
+}
+.sec-3-count{
+	font-size: 14pt;
+	font-weight: 500;
+}
+.cfshp-list-title1 span,.sec-3-title{
+	color:#989898;
+}
+.cfshp-list-img{
+    height: auto;
+}
+.cfshp-list-img img{
+    height: auto;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+.cfshp-list-title2{
+    margin:0 auto !important;
+    width:95%;
+}
+.cfshp-list-title2 span,.cfshp-list-title2 i[class^="flaticon-"]::before{
+    font-size:8pt !important;
+}
+.cfshp-list-title2 i{
+    direction: rtl !important;
+    float: right;
+    line-height: 1.1;
+}
+.cfshp-list-title2 span{
+    direction: rtl !important;
+    float: right;
+}
+.home-space{
+    width:1em;
+}
+
+#sec-2-count{
+	background-color: #e9e9e9;
+	padding: 1em 0 .01em;
+}
+.main-sec-desc{
+	font-size:14px !important;
+    font-style:normal;
+    font-weight: normal;
+}
+.main-sec-title{
+	font-size: 12pt;
+	font-weight: 600;
+}
+div.main-sec-logo [class^="flaticon-"]::before{
+	font-size: 5em !important;
+	line-height: 1.1;
+}
+.btn-a-link{
+    border: 1px solid #31383e;
+    color:#31383e;
+    margin: 0 1em;
+    background: none !important;
+    font-size: 11px;
+}
+.home-blog-title1{
+ 	font-size: 12pt;
+	font-weight: 600;   
+}
+.home-blog-title2{
+ 	font-size: 12pt;
+	font-weight: 400;  
+    color:#989898;
+}
+.home-diary0{
+    width: 100%;
+    text-align: center;
+}
+.home-diary1{
+    float: right;
+    margin:0 auto;   
+    width: 100%;
+}
+.home-diary2{
+    float: right;
+    margin:0 ;    
+}
+#newsletter-btn{
+    background: none;
+    border:0;
+    border-right:1px solid #fff;
+    margin-top:10px;
+}
+#footer-newsletter-form{
+    border:1px solid #989898;
+    border-radius:2px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    float:none;
+    min-height:50px;
+}
+#newsletter-input{
+    border-bottom: 0 !important;
+}
+/***footer***/
+.footer-logo-a{
+    background: url(../images/footer-bg.png) center center no-repeat;
+    width: 110px;
+    height: 3em;
+}
+footer.page-footer #ftr-copyright {
+
+  line-height: 42px;
+}
+.main-footer-3{
+    margin-top:20px !important;
+    margin-bottom: 10px !important;
+}
+.main-footer-links{
+    margin-bottom:0;
+}
+.main-footer-border{
+    border-bottom: 1px solid #fff;
+}
+.main-footer-div{
+    margin-bottom: 2px;
+}
+.main-footer-last{
+     margin-bottom: 0 !important;
+    padding-bottom: 5px;
+}
+/***end footer***/

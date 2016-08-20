@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "55e0189572197de0b563540cd8aae6d3",
-    "content-hash": "5bd58fd976f1ee3e9611bc37c006ec46",
+    "hash": "10365061278ddb2ea831459a1e981939",
+    "content-hash": "061dc2d55d5b5a5ffd8db911f458475c",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -363,6 +363,53 @@
             "time": "2015-12-05 17:17:57"
         },
         {
+            "name": "laratalks/validator",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/morilog/validator.git",
+                "reference": "85e61d67e7e14a817e7883bb626cc0b82cd06a3d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/morilog/validator/zipball/85e61d67e7e14a817e7883bb626cc0b82cd06a3d",
+                "reference": "85e61d67e7e14a817e7883bb626cc0b82cd06a3d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^5.1",
+                "illuminate/validation": "^5.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laratalks\\Validator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL"
+            ],
+            "authors": [
+                {
+                    "name": "bigsinoos",
+                    "email": "pcfeeler@gmail.com"
+                },
+                {
+                    "name": "Morteza Parvini",
+                    "email": "m.parvini@outlook.com"
+                }
+            ],
+            "description": "Laravel Validation supports multiple scenarios",
+            "keywords": [
+                "laratalks",
+                "laravel",
+                "validation",
+                "validator"
+            ],
+            "time": "2015-10-05 18:09:28"
+        },
+        {
             "name": "laravel/framework",
             "version": "v5.1.41",
             "source": {
@@ -651,6 +698,61 @@
                 "psr-3"
             ],
             "time": "2016-07-29 03:23:52"
+        },
+        {
+            "name": "morilog/jalali",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/morilog/jalali.git",
+                "reference": "9cafeaf9a08bc03062d7488ebc1ef008fe1a7160"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/morilog/jalali/zipball/9cafeaf9a08bc03062d7488ebc1ef008fe1a7160",
+                "reference": "9cafeaf9a08bc03062d7488ebc1ef008fe1a7160",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.0",
+                "nesbot/carbon": "^1.21",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Morilog\\Jalali\\": "src"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Milad Rey",
+                    "email": "miladr@gmail.com"
+                },
+                {
+                    "name": "Morteza Parvini",
+                    "email": "m.parvini@outlook.com"
+                }
+            ],
+            "description": "eThis Package helps developers to easily work with Jalali (Shamsi or Iranian) dates in Laravel 5 applications, based on Jalali (Shamsi) DateTime class.",
+            "keywords": [
+                "Jalali",
+                "date",
+                "datetime",
+                "laravel",
+                "morilog"
+            ],
+            "time": "2016-06-24 14:01:34"
         },
         {
             "name": "mtdowling/cron-expression",

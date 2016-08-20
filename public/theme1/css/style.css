@@ -1,0 +1,115 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+nav.nav-head-menu ul li{
+    float: right !important;
+}
+nav.nav-head-menu ul li a{
+    padding:0 .4em !important;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.button-collapse {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+footer.page-footer #ftr-copyright {
+  float:right;
+  line-height: 42px;
+}
+.footer-logo-a{
+    background: url(../images/footer-bg.png) center center no-repeat;
+    width: 110px;
+    height: auto;
+}
+footer.page-footer .footer-copyright {
+  overflow: hidden;
+  height: 50px;
+  line-height: 50px;
+}
+/**********HEADER************/
+.navbar-brand{
+  background: url(../images/head-logo.png) no-repeat center left;
+  width: 7em;
+}
+/**********ENDHEADER************/
+/**********REGISTER PAGE*******/
+.register-logo{
+  background: url(../images/register-logo.png) no-repeat top center;
+  height: 6.1em;
+}
+/**********END REGISTER PAGE*******/
+/**********REGISTER PLACE PAGE*******/
+.register-place-logo{
+  background: url(../images/register-place-logo.png) no-repeat top center;
+  height: 6.1em;
+}
+/**********END REGISTER PLACE PAGE*******/
+/**********REGISTER BARISTA PAGE*******/
+.register-barista-logo{
+  background: url(../images/register-barista-logo.png) no-repeat top center;
+  height: 6.1em;
+}
+/**********END REGISTER BARISTA PAGE*******/
+/**********NEW BUTTON*******/
+.btn-normal{
+  background-color: #fff !important;
+  border:1px solid #ffa000;
+  color:#ffa000;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
+}
+.btn-normal:hover{
+  background-color: #ffaa0a !important;
+  color:#fff;
+}
+/**********END NEW BUTTON*******/

@@ -1,0 +1,111 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 26/06/2016 07:20
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-announcement:before { content: "\f100"; }
+.flaticon-bars:before { content: "\f101"; }
+.flaticon-chef:before { content: "\f102"; }
+.flaticon-customer-service:before { content: "\f103"; }
+.flaticon-exit:before { content: "\f104"; }
+.flaticon-facebook:before { content: "\f105"; }
+.flaticon-food:before { content: "\f106"; }
+.flaticon-food-1:before { content: "\f107"; }
+.flaticon-food-2:before { content: "\f108"; }
+.flaticon-google-plus-logo:before { content: "\f109"; }
+.flaticon-instagram:before { content: "\f10a"; }
+.flaticon-interface:before { content: "\f10b"; }
+.flaticon-left-arrow:before { content: "\f10c"; }
+.flaticon-left-quote-mark:before { content: "\f10d"; }
+.flaticon-like:before { content: "\f10e"; }
+.flaticon-like-1:before { content: "\f10f"; }
+.flaticon-linkedin:before { content: "\f110"; }
+.flaticon-location:before { content: "\f111"; }
+.flaticon-mail:before { content: "\f112"; }
+.flaticon-medal:before { content: "\f113"; }
+.flaticon-music-player-play:before { content: "\f114"; }
+.flaticon-pinterest:before { content: "\f115"; }
+.flaticon-placeholder:before { content: "\f116"; }
+.flaticon-profile:before { content: "\f117"; }
+.flaticon-reply-all:before { content: "\f118"; }
+.flaticon-shop:before { content: "\f119"; }
+.flaticon-social-media:before { content: "\f11a"; }
+.flaticon-symbol:before { content: "\f11b"; }
+.flaticon-technology:before { content: "\f11c"; }
+.flaticon-technology-1:before { content: "\f11d"; }
+.flaticon-technology-2:before { content: "\f11e"; }
+.flaticon-telegram:before { content: "\f11f"; }
+.flaticon-thumb-up-button:before { content: "\f120"; }
+.flaticon-twitter:before { content: "\f121"; }
+.flaticon-user:before { content: "\f122"; }
+.flaticon-youtube:before { content: "\f123"; }
+    
+    $font-Flaticon-announcement: "\f100";
+    $font-Flaticon-bars: "\f101";
+    $font-Flaticon-chef: "\f102";
+    $font-Flaticon-customer-service: "\f103";
+    $font-Flaticon-exit: "\f104";
+    $font-Flaticon-facebook: "\f105";
+    $font-Flaticon-food: "\f106";
+    $font-Flaticon-food-1: "\f107";
+    $font-Flaticon-food-2: "\f108";
+    $font-Flaticon-google-plus-logo: "\f109";
+    $font-Flaticon-instagram: "\f10a";
+    $font-Flaticon-interface: "\f10b";
+    $font-Flaticon-left-arrow: "\f10c";
+    $font-Flaticon-left-quote-mark: "\f10d";
+    $font-Flaticon-like: "\f10e";
+    $font-Flaticon-like-1: "\f10f";
+    $font-Flaticon-linkedin: "\f110";
+    $font-Flaticon-location: "\f111";
+    $font-Flaticon-mail: "\f112";
+    $font-Flaticon-medal: "\f113";
+    $font-Flaticon-music-player-play: "\f114";
+    $font-Flaticon-pinterest: "\f115";
+    $font-Flaticon-placeholder: "\f116";
+    $font-Flaticon-profile: "\f117";
+    $font-Flaticon-reply-all: "\f118";
+    $font-Flaticon-shop: "\f119";
+    $font-Flaticon-social-media: "\f11a";
+    $font-Flaticon-symbol: "\f11b";
+    $font-Flaticon-technology: "\f11c";
+    $font-Flaticon-technology-1: "\f11d";
+    $font-Flaticon-technology-2: "\f11e";
+    $font-Flaticon-telegram: "\f11f";
+    $font-Flaticon-thumb-up-button: "\f120";
+    $font-Flaticon-twitter: "\f121";
+    $font-Flaticon-user: "\f122";
+    $font-Flaticon-youtube: "\f123";
