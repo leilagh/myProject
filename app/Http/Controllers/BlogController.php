@@ -73,7 +73,7 @@ class BlogController extends Controller
        abort(404,"not find this page ");
 
         //abort(403, 'Unauthorized action.');
-    	//return  view('blog.admin.picture');
+    //return  view('blog.admin.picture');
 
     }
 
