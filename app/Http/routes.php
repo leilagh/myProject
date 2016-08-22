@@ -27,6 +27,10 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
+Route::controllers([
+    'debug' => 'DebugController'
+]);
+
 
 // Blog panel
 Route::get('blog/admin/index', [
