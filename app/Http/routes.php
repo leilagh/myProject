@@ -37,6 +37,10 @@ Route::get('blog/admin/index', [
     'as' => 'blog.admin.index',
     'uses' => 'BlogController@index'
 ]);
+Route::get('blog/admin/users', [
+    'as' => 'blog.admin.users',
+    'uses' => 'RoleController@users'
+]);
 Route::get('blog/admin/keyword', [
     'as' => 'blog.admin.keyword',
     'uses' => 'BlogController@getKeyword'
@@ -60,4 +64,12 @@ Route::get('blog/admin/picture', [
 Route::post('blog/admin/picture', [
     'as' => 'blog.admin.picture',
     'uses' => 'BlogController@postPicture'
+]);
+Route::get('blog/admin/role', [
+    'as' => 'blog.admin.role',
+    'uses' => 'RoleController@getRole'
+]);
+Route::post('blog/admin/role', [
+    'as' => 'blog.admin.role',
+    'uses' => 'RoleController@postRole'
 ]);

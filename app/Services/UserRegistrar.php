@@ -6,6 +6,7 @@ use App\models\PlaceAdmin;
 use App\models\keywords;
 use App\models\Categories;
 use App\models\Pictures;
+use App\models\Roles;
 
 class UserRegistrar
 {
@@ -59,6 +60,16 @@ class UserRegistrar
 
 
           return Pictures::create($data);
+      }
+
+      public function add_role(array $data)
+      {
+          $data = array_only($data, [
+            'name'
+          ]);
+
+
+          return Roles::create($data);
       }
 
 }
