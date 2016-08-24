@@ -70,10 +70,10 @@ class BlogController extends Controller
     public function getPicture()
     {
     	//$admin = $admin_id;
-       abort(404,"not find this page ");
+     //  abort(404,"not find this page ");
 
         //abort(403, 'Unauthorized action.');
-    //return  view('blog.admin.picture');
+    return  view('blog.admin.picture');
 
     }
 

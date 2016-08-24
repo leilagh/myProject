@@ -59,18 +59,24 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+      //  if(isset($data['roles']))
+      //  print_r(serialize($data['roles']));die;
         $b_month = (strlen($data['b_month'])<2)?"0".$data['b_month']: $data['b_month'];
         $b_day = (strlen($data['b_day'])<2)?"0".$data['b_day']:$data['b_day'];
         $jdate = $data['b_year']."-".$b_month."-".$b_day." 00:00:00";
         $birthday = \Morilog\Jalali\jDatetime::createDatetimeFromFormat('Y-m-d H:i:s', $jdate);
         $data['birthday'] = $birthday;
         $newsletter = (@$data['newsletter'])?$data['newsletter']:0;
+        if(!isset($data['roles'])) $roles="";
+        else
+        $roles=serialize($data['roles']);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'newsletter' => $data['newsletter'],
             'birthday' => $data['birthday'],
+            'roles' => $roles,
         ]);
     }
 }

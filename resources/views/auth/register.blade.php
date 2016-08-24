@@ -113,7 +113,25 @@
 </div>
 
 
+<div class="row">
+  <div class="col ">
+  <div class="font-size-20">دسترسی :</div>
+    <p>
+      <input type="checkbox" value="1" name="roles[admin]" class="checkbox-orange filled-in" id="filled-in-box1"  />
+      <label for="filled-in-box1">Admin</label>
+    </p>
 
+    <p>
+      <input type="checkbox" value="2" name="roles[auther]" class="checkbox-orange filled-in" id="filled-in-box2"  />
+      <label for="filled-in-box2">AUTHER</label>
+    </p>
+
+    <p>
+      <input type="checkbox" value="3" name="roles[user]" class="checkbox-orange filled-in" id="filled-in-box3"  />
+      <label for="filled-in-box3">USER</label>
+    </p>
+  </div>
+</div>
 
 
 

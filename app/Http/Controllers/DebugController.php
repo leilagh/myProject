@@ -13,6 +13,7 @@ class DebugController extends Controller
 
     public function getIndex()
     {
-        abort(404,"Not found page ");
+        abort(404,"Not found page rt");
+		//return 1/0;
     }
 }
