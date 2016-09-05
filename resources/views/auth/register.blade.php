@@ -19,7 +19,13 @@
 <form class="col s12" role="form" enctype="multipart/form-data" method="POST" action="{{ url('/auth/register') }}">
 {!! csrf_field() !!}
 
-<div class="row">
+
+  <input type="hidden" value="1" name="roles[]"   />
+
+
+
+
+  <div class="row">
   <div class="register-logo left col s12 m12 l4 offset-l4">&nbsp;</div>
   <div class="font-size-25 left center-align col s12 m12 l4 offset-l4 grey-text text-darken-5">عضویت </div>
   <div class="left center-align col s12 m12 l4 offset-l4"><a href="#" class="red darken-4 waves-effect waves-light btn"><i class="flaticon-google-plus-logo left"></i>عضویت با جیمیل</a></div>
@@ -112,26 +118,6 @@
   </div>
 </div>
 
-
-<div class="row">
-  <div class="col ">
-  <div class="font-size-20">دسترسی :</div>
-    <p>
-      <input type="checkbox" value="1" name="roles[admin]" class="checkbox-orange filled-in" id="filled-in-box1"  />
-      <label for="filled-in-box1">Admin</label>
-    </p>
-
-    <p>
-      <input type="checkbox" value="2" name="roles[auther]" class="checkbox-orange filled-in" id="filled-in-box2"  />
-      <label for="filled-in-box2">AUTHER</label>
-    </p>
-
-    <p>
-      <input type="checkbox" value="3" name="roles[user]" class="checkbox-orange filled-in" id="filled-in-box3"  />
-      <label for="filled-in-box3">USER</label>
-    </p>
-  </div>
-</div>
 
 
 

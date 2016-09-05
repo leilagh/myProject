@@ -6,7 +6,8 @@
 <div class="container">
 <div class="row">
 
-    <div class="row"><a href="{{view('blog.admin.role')}}">ایجاد کاربران</a></div>
+    <div class="row"><a href="{{url('blog/admin/role')}}">ایجاد سمت</a></div>
+    <div class="row"><a href="{{url('blog/admin/userlist')}}">لیست کاربران</a></div>
 
 </div>
 

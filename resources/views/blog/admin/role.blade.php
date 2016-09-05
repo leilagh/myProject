@@ -20,8 +20,6 @@
 <form class="col s12" role="form" enctype="multipart/form-data" method="POST" action="{{ url('/blog/admin/role') }}">
 {!! csrf_field() !!}
 
-<input name="user_id" value="2" type="hidden" class="validate" >
-
 <div class="row">
   <div class="input-field col s12">
     <input name="name" value="{{ old('name') }}" type="text" class="validate" >

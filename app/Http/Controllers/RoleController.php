@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Hash;
 
 use App\Http\Requests;
@@ -9,6 +10,7 @@ use Input, Validator, Auth;
 use App\Services\UserRegistrar;
 use App\Models\User;
 use App\Models\Roles;
+
 
 class RoleController extends Controller
 {
@@ -33,14 +35,43 @@ class RoleController extends Controller
     public function postRole(Request $request, UserRegistrar $add_role, Roles $rolesModel)
     {
     	$validation = Validator::make($request->all(), [
-            'title' => ['required'],
+            'name' => ['required'],
         ]);
-
         if ($validation->fails()) {
             return redirect()->back()->withErrors($validation)->withInput();
         }
         $role = $add_role->add_role($request->all());
         return redirect()->route('blog.admin.users');
+    }
+    public function userlist()
+    {
+
+        $list = User::all();
+//print_r($list);die;
+        //   return  view('blog.admin.index');
+        return  view('blog.admin.userlist', compact('list'));
+    }
+
+
+    public function getEditrole($id)
+    {
+        $role_list = Roles::all();
+        $user_info = User::find($id);
+        return  view('blog.admin.editrole', compact('id','role_list','user_info'));
+
+    }
+
+    public function postEditrole(Request $request)
+    {
+        $user = User::find($request->id);
+
+        $user->roles = serialize($request->roles);
+
+        $user->save();
+
+       // print_R($request->roles);die;
+        return redirect()->route('blog.admin.users');
+
     }
 
    

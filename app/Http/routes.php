@@ -37,6 +37,20 @@ Route::get('blog/admin/index', [
     'as' => 'blog.admin.index',
     'uses' => 'BlogController@index'
 ]);
+
+Route::get('blog/admin/userlist', [
+    'as' => 'blog.admin.userlist',
+    'uses' => 'RoleController@userlist'
+]);
+Route::get('blog/admin/editrole/{id}', [
+    'as' => 'blog.admin.userlist',
+    'uses' => 'RoleController@getEditrole'
+]);
+Route::post('blog/admin/editrole/{id}', [
+    'as' => 'blog.admin.userlist',
+    'uses' => 'RoleController@postEditrole'
+]);
+
 Route::get('blog/admin/users', [
     'as' => 'blog.admin.users',
     'uses' => 'RoleController@users'
