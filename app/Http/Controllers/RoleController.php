@@ -2,79 +2,85 @@
 
 namespace App\Http\Controllers;
 
-use Hash;
 
-use App\Http\Requests;
-use Illuminate\Http\Request;
-use Input, Validator, Auth;
-use App\Services\UserRegistrar;
-use App\Models\User;
-use App\Models\Roles;
-
+use App\Models\Role;
+use Exception;
+use Request;
+use Illuminate\Support\Facades\Route;
+use Validator;
 
 class RoleController extends Controller
 {
 
-	public function index()
+    public function getIndex()
     {
-        //return  view('blog.admin.index');
-
-    }
-    public function users()
-    {
-        return  view('blog.admin.users');
-
+        $roles = Role::all();
+        return view('blog.admin.role.index', compact('roles'));
     }
 
-    public function getRole()
+    public function getNew()
     {
-    	return  view('blog.admin.role');
-
+        return view('blog.admin.role.new')->with('routeLists', self::routesList());
     }
 
-    public function postRole(Request $request, UserRegistrar $add_role, Roles $rolesModel)
+    public function postNew()
     {
-    	$validation = Validator::make($request->all(), [
-            'name' => ['required'],
-        ]);
-        if ($validation->fails()) {
-            return redirect()->back()->withErrors($validation)->withInput();
+        $validator = self::getValidator(Request::all());
+        if ($validator->fails()) {
+            return $validator->messages();
         }
-        $role = $add_role->add_role($request->all());
-        return redirect()->route('blog.admin.users');
+        try {
+            $data['title'] = Request::get('title');
+            $data['roles'] = json_encode(Request::get('roles'));
+            Role::create($data);
+            return 'Successfully created';
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
     }
-    public function userlist()
+
+    public function getEdit($id)
     {
-
-        $list = User::all();
-//print_r($list);die;
-        //   return  view('blog.admin.index');
-        return  view('blog.admin.userlist', compact('list'));
+        $role = Role::findOrFail($id);
+        $routeLists = self::routesList();
+        return view('blog.admin.role.edit', compact('role', 'routeLists'));
     }
 
-
-    public function getEditrole($id)
+    public function postEdit($id)
     {
-        $role_list = Roles::all();
-        $user_info = User::find($id);
-        return  view('blog.admin.editrole', compact('id','role_list','user_info'));
-
+        $validator = self::getValidator(Request::all());
+        if ($validator->fails()) {
+            return $validator->messages();
+        }
+        try {
+            $data['title'] = Request::get('title');
+            $data['roles'] = json_encode(Request::get('roles'));
+            Role::findOrFail($id)->update($data);
+            return 'Successfully update';
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
     }
 
-    public function postEditrole(Request $request)
+    private function getValidator($data)
     {
-        $user = User::find($request->id);
-
-        $user->roles = serialize($request->roles);
-
-        $user->save();
-
-       // print_R($request->roles);die;
-        return redirect()->route('blog.admin.users');
+        $conditions = [
+            'title' => 'required|min:3',
+            'roles' => 'required|array'
+        ];
+        return Validator::make($data, $conditions);
 
     }
 
-   
+    protected function routesList()
+    {
+        $routes = Route::getRoutes();
+        $routeActions = [];
+        foreach ($routes as $route) {
+            $routeActions[] = $route->getActionName();
+        }
+        $routeActions = array_unique($routeActions);
+        return $routeActions;
+    }
+
 }
-
-?>
