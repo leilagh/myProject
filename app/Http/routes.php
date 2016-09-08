@@ -16,10 +16,13 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
-Route::controllers([
-    'debug' => 'DebugController',
-    'role' => 'RoleController'
-]);
+Route::group(['middleware' => 'auth'], function () {
+    Route::controllers([
+        'debug' => 'DebugController',
+        'role' => 'RoleController'
+    ]);
+
+});
 
 
 // Blog panel

@@ -7,3 +7,8 @@ Homestead.json
 =======
 /.idea/*
 >>>>>>> 8cd37176b7255e5a77b7762e31a848e1da3f5861
+.env
+.env
+composer.lock
+config/ide-helper.php
+_ide_helper.php

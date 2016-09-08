@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
+use Request;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -39,7 +40,7 @@ class AuthController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -54,34 +55,20 @@ class AuthController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return User
      */
-    protected function create(array $data)
+    protected function create()
     {
-      //  if(isset($data['roles']))
-      //  print_r(serialize($data['roles']));die;
-        /*  $b_month = (strlen($data['b_month'])<2)?"0".$data['b_month']: $data['b_month'];
-          $b_day = (strlen($data['b_day'])<2)?"0".$data['b_day']:$data['b_day'];
-          $jdate = $data['b_year']."-".$b_month."-".$b_day." 00:00:00";
-          $birthday = \Morilog\Jalali\jDatetime::createDatetimeFromFormat('Y-m-d H:i:s', $jdate);*/
+        $data = Request::all();
 
         $birthday = \Morilog\Jalali\jDateTime::toGregorian($data['b_year'], $data['b_month'], $data['b_day']); // [2016, 5, 7]
-        $birthday = $birthday[0]."-".$birthday[1]."-".$birthday[2]." 00:00:00";
-      //  print_r($data['roles']);die;
+        $birthday = $birthday[0] . "-" . $birthday[1] . "-" . $birthday[2] . " 00:00:00";
 
         $data['birthday'] = $birthday;
-        $newsletter = (@$data['newsletter'])?$data['newsletter']:0;
-        if(!isset($data['roles'])) $roles="";
-        else
-        $roles=serialize($data['roles']);
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-            'newsletter' => $data['newsletter'],
-            'birthday' => $data['birthday'],
-            'roles' => $roles,
-        ]);
+        $data['password'] = bcrypt($data['password']);
+        $data['newsletter'] = Request::has('newsletter') ? 1 : 0;
+        $data['role_id'] = json_encode([5]);
+        return User::create($data);
     }
 }
