@@ -20,7 +20,7 @@ class RoleHandler
             }
             return $roles;
         } catch (Exception $e) {
-            return $e->getMessage();
+            return [];
         }
     }
 
