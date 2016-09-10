@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Hash;
+use DB;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
@@ -46,7 +47,8 @@ class RoleController extends Controller
     public function userlist()
     {
 
-        $list = User::all();
+      //  $list = User::all();
+        $list = $users = DB::table('users')->simplePaginate(2);;
 //print_r($list);die;
         //   return  view('blog.admin.index');
         return  view('blog.admin.userlist', compact('list'));

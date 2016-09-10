@@ -40,6 +40,8 @@
 
             @endforeach
 
+            {!! $list->render() !!}
+
                 </tbody>
             </table>
 
