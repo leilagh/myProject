@@ -20,7 +20,6 @@
 {!! csrf_field() !!}
 
 
-  <input type="hidden" value="1" name="roles[]"   />
 
 
 

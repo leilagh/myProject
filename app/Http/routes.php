@@ -18,11 +18,14 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::controllers([
-        'debug' => 'DebugController',
+     //   'debug' => 'DebugController',
         'role' => 'RoleController'
     ]);
 
 });
+Route::controllers([
+    'debug' => 'DebugController',
+]);
 
 
 // Blog panel
@@ -44,10 +47,7 @@ Route::post('blog/admin/editrole/{id}', [
     'uses' => 'RoleController@postEditrole'
 ]);
 
-Route::get('blog/admin/users', [
-    'as' => 'blog.admin.users',
-    'uses' => 'RoleController@users'
-]);
+
 Route::get('blog/admin/keyword', [
     'as' => 'blog.admin.keyword',
     'uses' => 'BlogController@getKeyword'
@@ -72,11 +72,4 @@ Route::post('blog/admin/picture', [
     'as' => 'blog.admin.picture',
     'uses' => 'BlogController@postPicture'
 ]);
-Route::get('blog/admin/role', [
-    'as' => 'blog.admin.role',
-    'uses' => 'RoleController@getRole'
-]);
-Route::post('blog/admin/role', [
-    'as' => 'blog.admin.role',
-    'uses' => 'RoleController@postRole'
-]);
+

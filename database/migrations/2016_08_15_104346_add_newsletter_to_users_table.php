@@ -14,7 +14,8 @@ class AddNewsletterToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->timestamp('birthday')->nullable();
-            $table->tinyInteger('newsletter')->default(0);   
+            $table->tinyInteger('newsletter')->default(0); 
+			$table->text('role_id')->nullable();			
         });
     }
 
@@ -28,6 +29,7 @@ class AddNewsletterToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->dropColumn('birthday');
             $table->dropColumn('newsletter');
+            $table->dropColumn('role_id');
         });
     }
 }

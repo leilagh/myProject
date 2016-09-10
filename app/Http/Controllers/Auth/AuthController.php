@@ -68,7 +68,7 @@ class AuthController extends Controller
         $data['birthday'] = $birthday;
         $data['password'] = bcrypt($data['password']);
         $data['newsletter'] = Request::has('newsletter') ? 1 : 0;
-        $data['role_id'] = json_encode([5]);
+        $data['role_id'] = json_encode(array('5'));
         return User::create($data);
     }
 }
