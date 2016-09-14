@@ -8,7 +8,7 @@
     {{--CSRF Token--}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Lili</title>
+    <title>@yield('header_title')</title>
 
 
     <script src="{{asset('bootstrap/jquery.min.js')}}"></script>

@@ -2,24 +2,25 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Role;
+use App\Models\Keywords;
 use Exception;
 use Request;
 use Illuminate\Support\Facades\Route;
 use Validator;
 
-class RoleController extends Controller
+class KeywordController extends Controller
 {
 
     public function getIndex()
     {
-        $roles = Role::all();
-        return view('blog.admin.role.index', compact('roles'));
+      //  print_r("keywords");die;
+        $keywords = Keywords::all();
+        return view('admin.keyword.index', compact('keywords'));
     }
 
     public function getNew()
     {
-        return view('blog.admin.role.new')->with('routeLists', self::routesList());
+        return view('admin.keyword.new');
     }
 
     public function postNew()
@@ -30,26 +31,18 @@ class RoleController extends Controller
         }
         try {
             $data['title'] = Request::get('title');
-            $data['roles'] = json_encode(Request::get('roles'));
-            Role::create($data);
+            $data['user_id'] = Request::get('user_id');
+            Keywords::create($data);
             return 'Successfully created';
         } catch (Exception $e) {
             return $e->getMessage();
         }
     }
 
-
-  /*    //  $list = User::all();
-        $list = $users = DB::table('users')->simplePaginate(2);;
-//print_r($list);die;
-        //   return  view('blog.admin.index');
-        return  view('blog.admin.userlist', compact('list'));*/
-
     public function getEdit($id)
     {
-        $role = Role::findOrFail($id);
-        $routeLists = self::routesList();
-        return view('blog.admin.role.edit', compact('role', 'routeLists'));
+        $keyword = Keywords::findOrFail($id);
+        return view('admin.keyword.edit', compact('keyword'));
     }
 
     public function postEdit($id)
@@ -60,9 +53,24 @@ class RoleController extends Controller
         }
         try {
             $data['title'] = Request::get('title');
-            $data['roles'] = json_encode(Request::get('roles'));
-            Role::findOrFail($id)->update($data);
+            $data['user_id'] = Request::get('user_id');
+            Keywords::findOrFail($id)->update($data);
             return 'Successfully update';
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+    public function getDelete($id)
+    {
+    //    print_r($id);die;
+        /*$validator = self::getValidator(Request::all());
+        if ($validator->fails()) {
+            return $validator->messages();
+        }*/
+        try {
+            $data['id'] = $id;
+            Keywords::findOrFail($id)->delete();
+            return 'Successfully delete';
         } catch (Exception $e) {
             return $e->getMessage();
         }
@@ -71,8 +79,7 @@ class RoleController extends Controller
     private function getValidator($data)
     {
         $conditions = [
-            'title' => 'required|min:3',
-            'roles' => 'required|array'
+            'title' => 'required|min:2'
         ];
         return Validator::make($data, $conditions);
 

@@ -21,13 +21,18 @@ Route::group(['middleware' => 'auth'], function () {
      //   'debug' => 'DebugController',
         'keyword' => 'KeywordController',
         'admin' => 'AdminController',
-        'role' => 'RoleController'
+        'role' => 'RoleController',
+
     ]);
 
 });
+Route::controllers([
+    'user' => 'UserController'
 
+]);
 Route::controllers([
     'debug' => 'DebugController',
+
 ]);
 
 // Blog panel
